@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF39C8F2-48A3-452E-AF42-A168AFFA15DE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Appeals Procedure.aspx" />
+    <Content Include="Assessment Evidence.aspx" />
+    <Content Include="Assessment Feedback Form.aspx" />
+    <Content Include="Assessment Guide.aspx" />
+    <Content Include="Assessment Instruments.aspx" />
+    <Content Include="Assessment Plan.aspx" />
+    <Content Include="Assessment Policy Form.aspx" />
+    <Content Include="Assessment Policy.aspx" />
+    <Content Include="Assessment Tools And Evidence.aspx" />
+    <Content Include="Assessor Details.aspx" />
+    <Content Include="Assessor Information.aspx" />
+    <Content Include="Assessor Review and Ethics Form.aspx" />
+    <Content Include="Assessor Security.aspx" />
+    <Content Include="AssessorLogin.aspx" />
+    <Content Include="Authenticity Information.aspx" />
+    <Content Include="Behavioural Observation Simulation Role Play.aspx" />
+    <Content Include="Behavioural Observation Simulation Role Play1.aspx" />
+    <Content Include="Behavioural Observation Simulation Role Play2.aspx" />
+    <Content Include="Copy Of Qualification.aspx" />
+    <Content Include="Copy Of Unit Standard.aspx" />
+    <Content Include="Database Security.aspx" />
+    <Content Include="Employment History.aspx" />
+    <Content Include="Feedback Security.aspx" />
+    <Content Include="Feedback Table subform.aspx" />
+    <Content Include="Feedback Table Subform1.aspx" />
+    <Content Include="Instruments Security.aspx" />
+    <Content Include="Personal Details.aspx" />
+    <Content Include="Learner Appeals Application Form main.aspx" />
+    <Content Include="Learner Appeals Application Form.aspx" />
+    <Content Include="Learner Assessement Evaluation.aspx" />
+    <Content Include="Learner Assessment Feedback Report.aspx" />
+    <Content Include="Learner Assessment Plan sub.aspx" />
+    <Content Include="Learner Assessment Plan.aspx" />
+    <Content Include="Learner Assessor Details.aspx" />
+    <Content Include="Learner CV.aspx" />
+    <Content Include="Learner Personal Details.aspx" />
+    <Content Include="Learner Pre Assessment Meeting.aspx" />
+    <Content Include="LearnerLogin.aspx" />
+    <Content Include="List NQF.aspx" />
+    <Content Include="Log Book.aspx" />
+    <Content Include="LogBook-Observation Checklist.aspx" />
+    <Content Include="MentorLogin.aspx" />
+    <Content Include="MICT SETA.aspx" />
+    <Content Include="ModeratorLogin.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Site.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pre Assessment Meeting Documents.aspx" />
+    <Content Include="Pre Assessment Meeting SUB2.aspx" />
+    <Content Include="Pre Assessment Meeting.aspx" />
+    <Content Include="Qualification Selection.aspx" />
+    <Content Include="REFERENCES.aspx" />
+    <Content Include="SAQA Unit Standards.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Selection Menu.aspx" />
+    <Content Include="Simulation Role Play.aspx" />
+    <Content Include="Tertiary Details.aspx" />
+    <Content Include="Testing.aspx" />
+    <Content Include="Unit Standard Selection.aspx" />
+    <Content Include="Unit Standard subform.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="SwitchBoard.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Appeals Procedure.aspx.cs">
+      <DependentUpon>Appeals Procedure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Appeals Procedure.aspx.designer.cs">
+      <DependentUpon>Appeals Procedure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment Evidence.aspx.cs">
+      <DependentUpon>Assessment Evidence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assessment Evidence.aspx.designer.cs">
+      <DependentUpon>Assessment Evidence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment Feedback Form.aspx.cs">
+      <DependentUpon>Assessment Feedback Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assessment Feedback Form.aspx.designer.cs">
+      <DependentUpon>Assessment Feedback Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment Guide.aspx.cs">
+      <DependentUpon>Assessment Guide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assessment Guide.aspx.designer.cs">
+      <DependentUpon>Assessment Guide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment Instruments.aspx.cs">
+      <DependentUpon>Assessment Instruments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assessment Instruments.aspx.designer.cs">
+      <DependentUpon>Assessment Instruments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment Plan.aspx.cs">
+      <DependentUpon>Assessment Plan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assessment Plan.aspx.designer.cs">
+      <DependentUpon>Assessment Plan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment Policy Form.aspx.cs">
+      <DependentUpon>Assessment Policy Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assessment Policy Form.aspx.designer.cs">
+      <DependentUpon>Assessment Policy Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment Policy.aspx.cs">
+      <DependentUpon>Assessment Policy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assessment Policy.aspx.designer.cs">
+      <DependentUpon>Assessment Policy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessment Tools And Evidence.aspx.cs">
+      <DependentUpon>Assessment Tools And Evidence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assessment Tools And Evidence.aspx.designer.cs">
+      <DependentUpon>Assessment Tools And Evidence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessor Details.aspx.cs">
+      <DependentUpon>Assessor Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assessor Details.aspx.designer.cs">
+      <DependentUpon>Assessor Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessor Information.aspx.cs">
+      <DependentUpon>Assessor Information.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assessor Information.aspx.designer.cs">
+      <DependentUpon>Assessor Information.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessor Review and Ethics Form.aspx.cs">
+      <DependentUpon>Assessor Review and Ethics Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assessor Review and Ethics Form.aspx.designer.cs">
+      <DependentUpon>Assessor Review and Ethics Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assessor Security.aspx.cs">
+      <DependentUpon>Assessor Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assessor Security.aspx.designer.cs">
+      <DependentUpon>Assessor Security.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssessorLogin.aspx.cs">
+      <DependentUpon>AssessorLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssessorLogin.aspx.designer.cs">
+      <DependentUpon>AssessorLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authenticity Information.aspx.cs">
+      <DependentUpon>Authenticity Information.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authenticity Information.aspx.designer.cs">
+      <DependentUpon>Authenticity Information.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Behavioural Observation Simulation Role Play.aspx.cs">
+      <DependentUpon>Behavioural Observation Simulation Role Play.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Behavioural Observation Simulation Role Play.aspx.designer.cs">
+      <DependentUpon>Behavioural Observation Simulation Role Play.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Behavioural Observation Simulation Role Play1.aspx.cs">
+      <DependentUpon>Behavioural Observation Simulation Role Play1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Behavioural Observation Simulation Role Play1.aspx.designer.cs">
+      <DependentUpon>Behavioural Observation Simulation Role Play1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Behavioural Observation Simulation Role Play2.aspx.cs">
+      <DependentUpon>Behavioural Observation Simulation Role Play2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Behavioural Observation Simulation Role Play2.aspx.designer.cs">
+      <DependentUpon>Behavioural Observation Simulation Role Play2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Copy Of Qualification.aspx.cs">
+      <DependentUpon>Copy Of Qualification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Copy Of Qualification.aspx.designer.cs">
+      <DependentUpon>Copy Of Qualification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Copy Of Unit Standard.aspx.cs">
+      <DependentUpon>Copy Of Unit Standard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Copy Of Unit Standard.aspx.designer.cs">
+      <DependentUpon>Copy Of Unit Standard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database Security.aspx.cs">
+      <DependentUpon>Database Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Database Security.aspx.designer.cs">
+      <DependentUpon>Database Security.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employment History.aspx.cs">
+      <DependentUpon>Employment History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employment History.aspx.designer.cs">
+      <DependentUpon>Employment History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback Security.aspx.cs">
+      <DependentUpon>Feedback Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback Security.aspx.designer.cs">
+      <DependentUpon>Feedback Security.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback Table subform.aspx.cs">
+      <DependentUpon>Feedback Table subform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback Table subform.aspx.designer.cs">
+      <DependentUpon>Feedback Table subform.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback Table Subform1.aspx.cs">
+      <DependentUpon>Feedback Table Subform1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback Table Subform1.aspx.designer.cs">
+      <DependentUpon>Feedback Table Subform1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Instruments Security.aspx.cs">
+      <DependentUpon>Instruments Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Instruments Security.aspx.designer.cs">
+      <DependentUpon>Instruments Security.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personal Details.aspx.cs">
+      <DependentUpon>Personal Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal Details.aspx.designer.cs">
+      <DependentUpon>Personal Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learner Appeals Application Form main.aspx.cs">
+      <DependentUpon>Learner Appeals Application Form main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learner Appeals Application Form main.aspx.designer.cs">
+      <DependentUpon>Learner Appeals Application Form main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learner Appeals Application Form.aspx.cs">
+      <DependentUpon>Learner Appeals Application Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learner Appeals Application Form.aspx.designer.cs">
+      <DependentUpon>Learner Appeals Application Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learner Assessement Evaluation.aspx.cs">
+      <DependentUpon>Learner Assessement Evaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learner Assessement Evaluation.aspx.designer.cs">
+      <DependentUpon>Learner Assessement Evaluation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learner Assessment Feedback Report.aspx.cs">
+      <DependentUpon>Learner Assessment Feedback Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learner Assessment Feedback Report.aspx.designer.cs">
+      <DependentUpon>Learner Assessment Feedback Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learner Assessment Plan sub.aspx.cs">
+      <DependentUpon>Learner Assessment Plan sub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learner Assessment Plan sub.aspx.designer.cs">
+      <DependentUpon>Learner Assessment Plan sub.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learner Assessment Plan.aspx.cs">
+      <DependentUpon>Learner Assessment Plan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learner Assessment Plan.aspx.designer.cs">
+      <DependentUpon>Learner Assessment Plan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learner Assessor Details.aspx.cs">
+      <DependentUpon>Learner Assessor Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learner Assessor Details.aspx.designer.cs">
+      <DependentUpon>Learner Assessor Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learner CV.aspx.cs">
+      <DependentUpon>Learner CV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learner CV.aspx.designer.cs">
+      <DependentUpon>Learner CV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learner Personal Details.aspx.cs">
+      <DependentUpon>Learner Personal Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learner Personal Details.aspx.designer.cs">
+      <DependentUpon>Learner Personal Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learner Pre Assessment Meeting.aspx.cs">
+      <DependentUpon>Learner Pre Assessment Meeting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learner Pre Assessment Meeting.aspx.designer.cs">
+      <DependentUpon>Learner Pre Assessment Meeting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LearnerLogin.aspx.cs">
+      <DependentUpon>LearnerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LearnerLogin.aspx.designer.cs">
+      <DependentUpon>LearnerLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="List NQF.aspx.cs">
+      <DependentUpon>List NQF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="List NQF.aspx.designer.cs">
+      <DependentUpon>List NQF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Log Book.aspx.cs">
+      <DependentUpon>Log Book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Log Book.aspx.designer.cs">
+      <DependentUpon>Log Book.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogBook-Observation Checklist.aspx.cs">
+      <DependentUpon>LogBook-Observation Checklist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogBook-Observation Checklist.aspx.designer.cs">
+      <DependentUpon>LogBook-Observation Checklist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MentorLogin.aspx.cs">
+      <DependentUpon>MentorLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MentorLogin.aspx.designer.cs">
+      <DependentUpon>MentorLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MICT SETA.aspx.cs">
+      <DependentUpon>MICT SETA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MICT SETA.aspx.designer.cs">
+      <DependentUpon>MICT SETA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModeratorLogin.aspx.cs">
+      <DependentUpon>ModeratorLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModeratorLogin.aspx.designer.cs">
+      <DependentUpon>ModeratorLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pre Assessment Meeting Documents.aspx.cs">
+      <DependentUpon>Pre Assessment Meeting Documents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pre Assessment Meeting Documents.aspx.designer.cs">
+      <DependentUpon>Pre Assessment Meeting Documents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pre Assessment Meeting SUB2.aspx.cs">
+      <DependentUpon>Pre Assessment Meeting SUB2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pre Assessment Meeting SUB2.aspx.designer.cs">
+      <DependentUpon>Pre Assessment Meeting SUB2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pre Assessment Meeting.aspx.cs">
+      <DependentUpon>Pre Assessment Meeting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pre Assessment Meeting.aspx.designer.cs">
+      <DependentUpon>Pre Assessment Meeting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Qualification Selection.aspx.cs">
+      <DependentUpon>Qualification Selection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Qualification Selection.aspx.designer.cs">
+      <DependentUpon>Qualification Selection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="REFERENCES.aspx.cs">
+      <DependentUpon>REFERENCES.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="REFERENCES.aspx.designer.cs">
+      <DependentUpon>REFERENCES.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SAQA Unit Standards.aspx.cs">
+      <DependentUpon>SAQA Unit Standards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SAQA Unit Standards.aspx.designer.cs">
+      <DependentUpon>SAQA Unit Standards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Selection Menu.aspx.cs">
+      <DependentUpon>Selection Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Selection Menu.aspx.designer.cs">
+      <DependentUpon>Selection Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Simulation Role Play.aspx.cs">
+      <DependentUpon>Simulation Role Play.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Simulation Role Play.aspx.designer.cs">
+      <DependentUpon>Simulation Role Play.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SwitchBoard.aspx.cs">
+      <DependentUpon>SwitchBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SwitchBoard.aspx.designer.cs">
+      <DependentUpon>SwitchBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tertiary Details.aspx.cs">
+      <DependentUpon>Tertiary Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tertiary Details.aspx.designer.cs">
+      <DependentUpon>Tertiary Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Testing.aspx.cs">
+      <DependentUpon>Testing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testing.aspx.designer.cs">
+      <DependentUpon>Testing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Unit Standard Selection.aspx.cs">
+      <DependentUpon>Unit Standard Selection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Unit Standard Selection.aspx.designer.cs">
+      <DependentUpon>Unit Standard Selection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Unit Standard subform.aspx.cs">
+      <DependentUpon>Unit Standard subform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Unit Standard subform.aspx.designer.cs">
+      <DependentUpon>Unit Standard subform.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50731</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50731/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
